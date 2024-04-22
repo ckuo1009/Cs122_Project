@@ -1,11 +1,13 @@
 from flask import Flask
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_url_path='', static_folder='frontend')
+
 
 @app.route('/')
 def home():
-    return "Welcome to quiz app!"
+    return app.send_static_file('index.html')
+
 
 if __name__ == '__main__':
-    app.run(debug=True,port=8080)
-
+    app.run(debug=True, host='0.0.0.0', port=8080)
