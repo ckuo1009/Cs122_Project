@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      function submitForm(event) {
+        event.preventDefault(); //
+        const formData = new FormData(document.querySelector("form"));
+        fetch("/register", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data.message); // show the message
+            if (data.status === "success") {
+              window.location = "/"; // go to login page
+            }
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="submitForm(event)">
+      <div>
+        <label for="username">Username：</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div>
+        <label for="password">Password：</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div>
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+  </body>
+</html>
