@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #24285b;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  padding: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.applications-box {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 50px;
+  padding: 50px;
+}
+
+h2 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 60%;
+  background-color: #5cb85c;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.application-item {
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.job-title,
+.status-select,
+.button {
+  margin-right: 10px;
+}
+
+.job-title {
+  flex-grow: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.status-select,
+.button {
+  flex-shrink: 0;
+}
+
+.status {
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+}
+
+.applied {
+  background-color: #5cb85c;
+}
+
+.reviewed {
+  background-color: #f0ad4e;
+}
+
+.in-progress {
+  background-color: #5bc0de;
+}
+
+.rejected {
+  background-color: #d9534f;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  color: white;
+  background-color: #24285b;
+  cursor: pointer;
+}
+
+.status-select {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+}
+
+.header h1 a {
+  color: white;
+  text-decoration: none;
+}

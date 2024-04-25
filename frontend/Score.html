@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+
+    .score-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .score-container h1 {
+      color: #5cb85c;
+    }
+
+    .score-container p {
+      font-size: 20px;
+    }
+
+    .btn-primary {
+      background-color: #5cb85c;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="score-container">
+    <h1>Your Quiz Score</h1>
+    <p id="display-score">Calculating...</p>
+    <a href="Home.html" class="btn btn-primary">Return to Home</a>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const score = localStorage.getItem('score');
+      const totalQuestions = JSON.parse(localStorage.getItem('selectedQuiz')).questions.length;
+      document.getElementById('display-score').textContent = `You scored ${score} out of ${totalQuestions}`;
+    });
+  </script>
+</body>
+
+</html>
